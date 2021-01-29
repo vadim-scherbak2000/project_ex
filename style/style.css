@@ -149,6 +149,34 @@ p {
   text-decoration: none;
 }
 
+.b-head-btn_green {
+  font-family: "Roboto Bold";
+  font-size: clamp(10.9714285714px,1.4285714286vw,20px);
+  text-transform: uppercase;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+.b-head-btn_green:hover {
+  animation-name: bor;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.b-head-btn_white {
+  font-family: "OpenSans SemiBold";
+  font-size: clamp(10.9714285714px,1.4285714286vw,20px);
+  text-transform: uppercase;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+.b-head-btn_white:hover {
+  animation-name: trans-to, bor;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
 .b-page__header-line {
   padding: 50px min(120px,8.5714285714vw);
 }
@@ -213,4 +241,65 @@ p {
 
 .b-header-nav-img {
   height: 10px;
+}
+
+.b-head-info {
+  display: table;
+  width: 100%;
+  background: url(../img/header/header-back.png);
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  height: calc(100vh - 100px - min(25px,1.7857142857vw));
+  text-align: center;
+  color: white;
+}
+.b-head-container {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+@media (max-aspect-ratio: 25/17) {
+  .b-head-info {
+    background: url(../img/header/header-back.png);
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.b-head-content {
+  display: inline-block;
+}
+.b-head-content__post-title {
+  margin-top: 25px;
+  margin-bottom: 110px;
+}
+.b-head-content__btn {
+  margin-right: min(25px,1.7857142857vw);
+  padding: 0 3em;
+}
+.b-head-content__btn:last-of-type {
+  margin: 0;
+}
+.b-head-content__btn_green {
+  padding: 0 calc(3em + 3px);
+}
+
+.b-head-btn {
+  height: 5em;
+}
+@media (max-width: 325px) {
+  .b-head-btn {
+    display: none;
+  }
+}
+.b-head-btn_white {
+  font-family: "Roboto Bold";
+  border: 3px solid white;
+  background: transparent;
+}
+.b-head-btn_green {
+  background: #00897b;
 }

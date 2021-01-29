@@ -1,1 +1,49 @@
+.b-head-info {
+  @include c-t(b-head-container);
+  @include adapt-b(25,17,$head-block-back);
+  height:calc(100vh - 100px - #{b-pnts(25px)});
+  text-align:center;
+  color:white;
+}
+.b-head-content {
+  display:inline-block;
 
+  &__post-title {
+    margin-top:25px;
+    margin-bottom:110px;
+  }
+
+  &__btn {
+    margin-right:b-pnts(25px);
+    padding:0 3em;
+
+    &:last-of-type {
+      margin:0;
+    }
+
+    &_green {
+      padding:0 calc(3em + 3px);
+    }
+  }
+}
+.b-head-title {}
+.b-head-post-title {}
+.b-head-btn {
+  height:5em;
+
+  @media (max-width:325px) {
+    display:none;
+  }
+
+  &_white {
+    @extend %g-trans-btn;
+    font-family: "Roboto Bold";
+    border:3px solid white;
+    background:transparent;
+  }
+
+  &_green {
+    @extend %g-fill-btn;
+    background:$btn-back-green;
+  }
+}
