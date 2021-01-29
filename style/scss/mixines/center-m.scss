@@ -1,0 +1,42 @@
+@mixin c-ib($cls,$v:middle,$h:initial) {
+  text-align:$h;
+  &::before {
+    content:'';
+    display:inline-block;
+    height:100%;
+    vertical-align:$v;
+  }
+  @at-root %#{$cls} {
+    vertical-align:$v;
+    display:inline-block;
+  }
+}
+@mixin c-b($par,$w,$h:0) {
+  top:calc(50% - #{$w} / 2);
+  position:relative;
+  margin:$h;
+  @at-root %#{$par} {
+      position:absolute;
+  }
+}
+@mixin c-t($cell,$item:false) {
+  display:table;
+  width:100%;
+  @at-root .#{$cell} {
+    display:table-cell;
+    vertical-align:middle;
+    height:100%;
+  }
+  @if $item {
+    @at-root .#{$item} {
+      margin:auto;
+    }
+  }
+}
+@mixin c-i($h,$val:true) {
+  height:$h;
+  line-height:$h;
+  @if $val {
+    text-align:center;
+  }
+}

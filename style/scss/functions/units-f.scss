@@ -1,0 +1,54 @@
+@function clear-units($value){
+    @if type-of($value) == "number" {
+        @if (unitless($value)) {
+            @return $value;
+        } @else if unit($value) == "em"{
+            @return $value / 1em;
+        } @else if unit($value) == "px" {
+            @return $value / 1px;
+        } @else if unit($value) == "pt" {
+            @return $value / 1pt;
+        } @else if unit($value) == "vw" {
+            @return $value / 1vw;
+        }
+    } @else {
+        @return $value;
+    }
+}
+@function rel-unit($val,$in-s:$initial-size,$curr-s:100vw) {
+    $val:clear-units($val);
+    $in-s:clear-units($in-s);
+    @return $val / $in-s * $curr-s;
+}
+@function to_rem($val) {
+    $val:clear-units($val);
+    @return $val / clear-units($fs) * 1rem;
+}
+@function b-pnts($val,$break-min:false,$break-max:$initial-size,$i-s:$initial-size) {
+  @if (not $break-min) and (not $break-max) {
+      @return rel-unit($val,$i-s);
+  } @else if not $break-min {
+      $val-max:rel-unit($val,$i-s,$break-max);
+      @return #{'min(#{$val-max},#{rel-unit($val)})'};
+  } @else if not $break-max {
+      $val-min:rel-unit($val,$i-s,$break-min);
+      @return #{'max(#{$val-min},#{rel-unit($val)})'};
+  }
+  $val-max:rel-unit($val,$i-s,$break-max);
+  $val-min:rel-unit($val,$i-s,$break-min);
+  @return clamp(#{$val-min},#{rel-unit($val)},#{$val-max});
+}
+@function b-sz($val,$break-min:false,$break-max:false,$i-s:$initial-size) {
+  @if (not $break-min) and (not $break-max) {
+      @return rel-unit($val,$i-s);
+  } @else if not $break-min {
+      @return #{'min(#{rel-unit($val)},#{$break-max})'};
+  } @else if not $break-max {
+      @return #{'max(#{rel-unit($val)},#{$break-min})'};
+  }
+  @return clamp(#{$break-min},#{rel-unit($val)},#{$break-max});
+}
+@function catch-p($i-v,$break-p,$curr-p) {
+  $curr-v:rel-unit($i-v,$initial-size,$break-p);
+  @return rel-unit($curr-v,$curr-p);
+}

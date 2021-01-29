@@ -1,0 +1,40 @@
+@keyframes trans-to {
+  from {
+    background:rgba(0,0,0,0);
+  }
+  to {
+    background:rgba(0,0,0,0.5);
+  }
+}
+@keyframes trans-from {
+  from {
+    background:rgba(0,0,0,0.5);
+  }
+  to {
+    background:rgba(0,0,0,0);
+  }
+}
+@keyframes appearence {
+  from {
+    opacity:0.5;
+  }
+  to {
+    opacity:1;
+  }
+}
+@keyframes appearence-h {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:0.5;
+  }
+}
+@keyframes bor {
+  from {
+    border-radius:0;
+  }
+  to {
+    border-radius:4px;
+  }
+}

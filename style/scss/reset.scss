@@ -1,0 +1,81 @@
+a {
+  text-decoration:none;
+  color:inherit;
+}
+button {
+  background-color:transparent;
+  padding:0;
+  border-width:0;
+  border-style:none;
+  border-color:initial;
+}
+input {
+  color:black;
+  background-color:white;
+  padding:0;
+  border-width:0;
+  border-style:none;
+  border-color:initial;
+  border-image:none;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin:0;
+  font-weight: normal;
+}
+p {
+    margin:0;
+}
+h6 {
+  @include txt(
+    $txt-semibold,
+    b-pnts($big-title-fs,$scr-w-s)
+  );
+
+  @media (max-width:$scr-w-xs) {
+    font-size:catch-p(60px,$scr-w-s,$scr-w-xs);
+  }
+}
+h5 {
+  @include txt(
+    $txt-bold,
+    b-sz($medium-title-fs,15px)
+  );
+
+  @media (max-width:$scr-w-lg) {
+    white-space:nowrap;
+  }
+}
+h4 {
+  @include txt(
+    $txt-bold,
+    b-pnts($small-title-fs,$scr-w-m)
+  );
+}
+h3 {
+  @include txt(
+    $btn-fill-f,
+    b-pnts($big-txt-fs,$scr-w-m)
+  );
+}
+h2 {
+  @include txt(
+    $txt-semibold,
+    b-pnts($big-txt-fs,$scr-w-b)
+  );
+}
+h1 {
+  @include txt(
+    $txt-regular,
+    b-pnts($big-txt-fs,$scr-w-m)
+  );
+
+  @media (max-width:$scr-w-xs) {
+    font-size:catch-p($big-txt-fs,$scr-w-m,$scr-w-xs);
+  }
+}
+p {
+  @include txt(
+    $txt-regular,
+    b-pnts($medium-txt-fs,$scr-w-lg)
+  );
+}

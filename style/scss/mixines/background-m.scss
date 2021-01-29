@@ -1,0 +1,18 @@
+@mixin b-w($url) {
+  background:$url;
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+@mixin b-h($url) {
+  background:$url;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+@mixin adapt_b($w,$h,$url) {
+    @include b-w($url);
+    @media (max-aspect-ratio:#{$w}/#{$h}) {
+        @include b-h($url);
+    }
+}

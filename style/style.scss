@@ -1,0 +1,16 @@
+@use 'scss/main_mod.scss' as * with (
+  $initial-size:1400px
+);
+
+@import 'fonts-init.css';
+@import 'animation.scss';
+@import 'scss/variables.scss';
+@import 'scss/reset.scss';
+@import 'scss/placeholders.scss';
+@import 'scss/blocks/header-block.scss';
+@import 'scss/blocks/head-info-block.scss';
+@import 'scss/blocks/about-block.scss';
+@import 'scss/blocks/service-block.scss';
+@import 'scss/blocks/lworks-block.scss';
+@import 'scss/blocks/contacts-block.scss';
+@import 'scss/blocks/footer-block.scss';

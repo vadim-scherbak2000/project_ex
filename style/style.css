@@ -1,0 +1,150 @@
+@import 'fonts-init.css';
+@keyframes trans-to {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes trans-from {
+  from {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+@keyframes appearence {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes appearence-h {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes bor {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 4px;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  padding: 0;
+  border-width: 0;
+  border-style: none;
+  border-color: initial;
+}
+
+input {
+  color: black;
+  background-color: white;
+  padding: 0;
+  border-width: 0;
+  border-style: none;
+  border-color: initial;
+  border-image: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  margin: 0;
+}
+
+h6 {
+  font-family: "OpenSans SemiBold";
+  font-size: clamp(24.6857142857px,4.2857142857vw,60px);
+  text-transform: inherit;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+@media (max-width: 350px) {
+  h6 {
+    font-size: 7.0530612245vw;
+  }
+}
+
+h5 {
+  font-family: "OpenSans Bold";
+  font-size: max(2.1428571429vw,15px);
+  text-transform: inherit;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  h5 {
+    white-space: nowrap;
+  }
+}
+
+h4 {
+  font-family: "OpenSans Bold";
+  font-size: clamp(13.7142857143px,1.7857142857vw,25px);
+  text-transform: inherit;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+
+h3 {
+  font-family: "Roboto Bold";
+  font-size: clamp(10.9714285714px,1.4285714286vw,20px);
+  text-transform: inherit;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: "OpenSans SemiBold";
+  font-size: clamp(14.1714285714px,1.4285714286vw,20px);
+  text-transform: inherit;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "OpenSans Regular";
+  font-size: clamp(10.9714285714px,1.4285714286vw,20px);
+  text-transform: inherit;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}
+@media (max-width: 350px) {
+  h1 {
+    font-size: 3.1346938776vw;
+  }
+}
+
+p {
+  font-family: "OpenSans Regular";
+  font-size: clamp(12.8571428571px,1.0714285714vw,15px);
+  text-transform: inherit;
+  color: inherit;
+  white-space: inherit;
+  text-decoration: none;
+}

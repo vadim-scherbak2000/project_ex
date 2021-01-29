@@ -1,0 +1,26 @@
+%g-fill-btn {
+  @include txt(
+    $btn-fill-f,
+    b-pnts($btn-fs,$scr-w-m),
+    $btn-tt
+  );
+
+  &:hover {
+    animation-name:bor;
+    animation-duration:$short-a;
+    animation-fill-mode:forwards;
+  }
+}
+%g-trans-btn {
+  @include txt(
+    $btn-trans-f,
+    b-pnts($btn-fs,$scr-w-m),
+    $btn-tt
+  );
+
+  &:hover {
+    animation-name:trans-to,bor;
+    animation-duration:$short-a;
+    animation-fill-mode: forwards;
+  }
+}

@@ -1,0 +1,13 @@
+@mixin f-v($val:column) {
+  display:flex;
+  flex-direction:$val;
+}
+@mixin f-xy($x:center,$y:center,$dir:false) {
+  @if $dir {
+    @include f-v($dir);
+  } @else {
+    display:flex;
+  }
+  justify-content:$x;
+  align-items:$y;
+}

@@ -1,0 +1,8 @@
+@mixin txt($ff:$M_F,$fs:inherit,$tt:inherit,$col:inherit,$ws:inherit,$td:none,$mimax:false) {
+  font-family:$ff;
+  font-size:$fs;
+  text-transform:$tt;
+  color:$col;
+  white-space:$ws;
+  text-decoration:$td;
+}
