@@ -6,6 +6,20 @@ html(lang='zxx')
     link(rel='stylesheet',href='style/packages/Normalize.css')
     link(rel='stylesheet',href='style/style.css')
   body.b-page 
-    header
+    header.b-page__header-line 
+      h4.b-header-logo your logo 
+      nav.b-header-nav.b-page__nav
+      
+        -let b_header_nav_link = ['home','about','servicing','portfolio','blog','contact us'];
+        -for (let i of b_header_nav_link) {
+          .b-header-nav-item.b-header-nav__item
+            a(href='*')= i
+        -}
+        
+        .b-header-nav-item.b-header-nav-item_search
+          img(src='img/header/header-search.png',alt='img').b-header-search-img
+      .b-header-nav.b-page__nav.b-header-nav_minw
+        button(type='button').b-header-nav-item.b-header-nav__item_move menu 
+        img(src='img/header/header-menu.png',alt='img').b-header-nav-img
     main 
     footer

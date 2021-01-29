@@ -62,7 +62,7 @@ input {
   border-image: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, .b-header-nav-item, h3, h4, h5, h6 {
   margin: 0;
   font-weight: normal;
 }
@@ -117,7 +117,7 @@ h3 {
   text-decoration: none;
 }
 
-h2 {
+h2, .b-header-nav-item {
   font-family: "OpenSans SemiBold";
   font-size: clamp(14.1714285714px,1.4285714286vw,20px);
   text-transform: inherit;
@@ -147,4 +147,70 @@ p {
   color: inherit;
   white-space: inherit;
   text-decoration: none;
+}
+
+.b-page__header-line {
+  padding: 50px min(120px,8.5714285714vw);
+}
+
+.b-page__nav {
+  float: right;
+}
+
+.b-header-logo {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.b-header-nav {
+  display: inline-block;
+}
+@media (max-width: 992px) {
+  .b-header-nav {
+    display: none;
+  }
+}
+.b-header-nav__item {
+  margin-right: 45px;
+}
+.b-header-nav__item:last-of-type {
+  margin: 0;
+}
+.b-header-nav__item_move {
+  margin-right: 10px;
+}
+.b-header-nav_minw {
+  text-align: initial;
+  display: none;
+  float: right;
+}
+.b-header-nav_minw::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.b-header-nav-img, .b-header-nav-item {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@media (max-width: 992px) {
+  .b-header-nav_minw {
+    display: inline-block;
+  }
+}
+
+.b-header-nav-item {
+  text-transform: capitalize;
+  display: inline;
+}
+@media (max-width: 350px) {
+  .b-header-nav-item {
+    display: none;
+  }
+}
+
+.b-header-nav-img {
+  height: 10px;
 }
