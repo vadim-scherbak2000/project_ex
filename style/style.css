@@ -743,3 +743,18 @@ p {
 .b-contacts-inp_sub:hover {
   animation-name: none;
 }
+
+.b-footer {
+  text-align: center;
+  position: relative;
+}
+
+.b-page__footer-line {
+  margin: 25px 0;
+}
+
+.b-footer-img {
+  position: absolute;
+  top: calc(0% - 20px);
+  left: 5px;
+}
