@@ -44,5 +44,25 @@ html(lang='zxx')
               img(src=`img/about/about-us-img${++i}.png`,alt='img').b-abus-col__img
               h2.b-abus-col-title.b-abus-col__title= b_abus_col[--i]
               p.b-abus-col-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+          -}
+      article.b-service.b-page__service-line
+        h5.b-service-title our services
+        p.b-service-post-title.b-service__post-title.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        .b-services
+        
+          -let b_service_item = ['research','portfolio','support','documentation','development','design'];
+          -for (let i of b_service_item) {
+            section.b-service-item.b-services__item
+              h2.b-service-item-title= i
+              p.b-service-item-txt. 
+                At vero eos et accusamus et iusto
+                odio dignissimos ducimus qui bland
+                itiis praesentium voluptatum iti 
+                atque corrupti quos.
+              .b-service-btn-container 
+                button(type='button').b-service-item-btn.b-service-item__btn read more 
           -}      
+        
     footer

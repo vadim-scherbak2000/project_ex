@@ -1,0 +1,96 @@
+.b-service {
+  background:$service-block-back;
+  text-align:center;
+
+  &__post-title {
+    margin:35px 0 115px 0;
+  }
+
+}
+.b-page__service-line {
+  padding:175px b-pnts(115px) 115px;
+}
+.b-service-title {
+  text-transform:$title-tt;
+}
+.b-service-post-title {
+  white-space:$title-ws;
+
+  @media (max-width:$scr-w-lg) {
+    white-space:normal;
+  }
+}
+.b-services {
+  display: grid;
+  grid-template: repeat(2,440px) / repeat(3, minmax(auto, 370px));
+  gap: b-pnts(30px);
+  justify-content: center;
+
+  @media (max-width:$scr-w-m) {
+    grid-template:repeat(3,440px) / repeat(2, minmax(auto,460px));
+  }
+  @media (max-width:$scr-w-s) {
+    grid-template:repeat(6,440px) / repeat(1, minmax(auto, 460px));
+  }
+
+  &__item {
+    padding:0 50px;
+  }
+}
+.b-service-item {
+  @include f-xy(space-evenly,center,column);
+  background: white;
+
+  &:hover {
+    animation-name:appearence;
+    animation-duration:$short-a;
+    animation-fill-mode:forwards;
+    background:$btn-back-green;
+    color:white;
+
+    &::before {
+      background:url(.../../../img/service/service-white-img.png);
+    }
+  }
+
+  &::before {
+    content:'';
+    height:62px;
+    width:56px;
+    background:url(.../../../img/service/service-img.png);
+  }
+
+  &__btn {
+    padding:1.5em 1em;
+  }
+}
+.b-service-item-title {
+  text-transform:$title-tt;
+}
+.b-service-item-txt {}
+.b-service-btn-container {
+  position:relative;
+
+  &:hover {
+    &::after {
+      animation-name:appearence;
+      animation-duration:$short-a;
+      content: "";
+      width: 26px;
+      height: 31px;
+      background: url(.../../../img/service/service-btn.png);
+      position: absolute;
+      bottom: -15px;
+      left: calc(50% - 13px);
+    }
+  }
+}
+.b-service-item-btn {
+  @extend %g-trans-btn;
+  border:2px solid;
+  white-space:pre;
+
+  &:hover {
+    border-color:transparent;
+  }
+}

@@ -163,7 +163,7 @@ p {
   animation-fill-mode: forwards;
 }
 
-.b-head-btn_white {
+.b-service-item-btn, .b-head-btn_white {
   font-family: "OpenSans SemiBold";
   font-size: clamp(10.9714285714px,1.4285714286vw,20px);
   text-transform: uppercase;
@@ -171,7 +171,7 @@ p {
   white-space: inherit;
   text-decoration: none;
 }
-.b-head-btn_white:hover {
+.b-service-item-btn:hover, .b-head-btn_white:hover {
   animation-name: trans-to, bor;
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
@@ -387,4 +387,103 @@ p {
 
 .b-abus-col-title {
   text-transform: capitalize;
+}
+
+.b-service {
+  background: #e4fdf9;
+  text-align: center;
+}
+.b-service__post-title {
+  margin: 35px 0 115px 0;
+}
+
+.b-page__service-line {
+  padding: 175px min(115px,8.2142857143vw) 115px;
+}
+
+.b-service-title {
+  text-transform: capitalize;
+}
+
+.b-service-post-title {
+  white-space: pre;
+}
+@media (max-width: 1200px) {
+  .b-service-post-title {
+    white-space: normal;
+  }
+}
+
+.b-services {
+  display: grid;
+  grid-template: repeat(2, 440px)/repeat(3, minmax(auto, 370px));
+  gap: min(30px,2.1428571429vw);
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .b-services {
+    grid-template: repeat(3, 440px)/repeat(2, minmax(auto, 460px));
+  }
+}
+@media (max-width: 576px) {
+  .b-services {
+    grid-template: repeat(6, 440px)/repeat(1, minmax(auto, 460px));
+  }
+}
+.b-services__item {
+  padding: 0 50px;
+}
+
+.b-service-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+}
+.b-service-item:hover {
+  animation-name: appearence;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  background: #00897b;
+  color: white;
+}
+.b-service-item:hover::before {
+  background: url(.../../../img/service/service-white-img.png);
+}
+.b-service-item::before {
+  content: "";
+  height: 62px;
+  width: 56px;
+  background: url(.../../../img/service/service-img.png);
+}
+.b-service-item__btn {
+  padding: 1.5em 1em;
+}
+
+.b-service-item-title {
+  text-transform: capitalize;
+}
+
+.b-service-btn-container {
+  position: relative;
+}
+.b-service-btn-container:hover::after {
+  animation-name: appearence;
+  animation-duration: 0.2s;
+  content: "";
+  width: 26px;
+  height: 31px;
+  background: url(.../../../img/service/service-btn.png);
+  position: absolute;
+  bottom: -15px;
+  left: calc(50% - 13px);
+}
+
+.b-service-item-btn {
+  border: 2px solid;
+  white-space: pre;
+}
+.b-service-item-btn:hover {
+  border-color: transparent;
 }
