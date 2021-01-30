@@ -1,10 +1,33 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import 'fonts-init.css';
+@-webkit-keyframes trans-to {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
 @keyframes trans-to {
   from {
     background: rgba(0, 0, 0, 0);
   }
   to {
     background: rgba(0, 0, 0, 0.5);
+  }
+}
+@-webkit-keyframes trans-from {
+  from {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
   }
 }
 @keyframes trans-from {
@@ -15,6 +38,14 @@
     background: rgba(0, 0, 0, 0);
   }
 }
+@-webkit-keyframes appearence {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes appearence {
   from {
     opacity: 0.5;
@@ -23,12 +54,28 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes appearence-h {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
 @keyframes appearence-h {
   from {
     opacity: 0;
   }
   to {
     opacity: 0.5;
+  }
+}
+@-webkit-keyframes bor {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 4px;
   }
 }
 @keyframes bor {
@@ -59,7 +106,8 @@ input {
   border-width: 0;
   border-style: none;
   border-color: initial;
-  border-image: none;
+  -o-border-image: none;
+     border-image: none;
 }
 
 h1, h2, .b-contacts-inp, .b-header-nav-item, h3, h4, h5, h6 {
@@ -158,9 +206,12 @@ p {
   text-decoration: none;
 }
 .b-contacts-inp_sub:hover, .b-lworks-vbtn:hover, .b-head-btn_green:hover {
-  animation-name: bor;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: bor;
+          animation-name: bor;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .b-lworks-btn, .b-service-item-btn, .b-head-btn_white {
@@ -172,9 +223,12 @@ p {
   text-decoration: none;
 }
 .b-lworks-btn:hover, .b-service-item-btn:hover, .b-head-btn_white:hover {
-  animation-name: trans-to, bor;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: trans-to, bor;
+          animation-name: trans-to, bor;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .b-page__header-line {
@@ -332,14 +386,23 @@ p {
 }
 
 .b-abus-cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
   max-width: 1170px;
 }
 @media (max-width: 768px) {
   .b-abus-cols {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .b-abus-cols__col {
@@ -366,17 +429,29 @@ p {
 }
 
 .b-abus-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: initial;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #d6b3b3;
   max-width: 370px;
 }
 .b-abus-col:hover {
-  animation-name: bor;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: bor;
+          animation-name: bor;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .b-abus-col__img {
   margin: 12px 0 40px 0;
@@ -415,19 +490,28 @@ p {
 }
 
 .b-services {
+  display: -ms-grid;
   display: grid;
-  grid-template: repeat(2, 440px)/repeat(3, minmax(auto, 370px));
+  -ms-grid-rows: 440px min(30px,2.1428571429vw) 440px;
+  -ms-grid-columns: minmax(auto, 370px) min(30px,2.1428571429vw) minmax(auto, 370px) min(30px,2.1428571429vw) minmax(auto, 370px);
+      grid-template: repeat(2, 440px)/repeat(3, minmax(auto, 370px));
   gap: min(30px,2.1428571429vw);
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media (max-width: 768px) {
   .b-services {
-    grid-template: repeat(3, 440px)/repeat(2, minmax(auto, 460px));
+    -ms-grid-rows: (440px)[3];
+    -ms-grid-columns: (minmax(auto, 460px))[2];
+        grid-template: repeat(3, 440px)/repeat(2, minmax(auto, 460px));
   }
 }
 @media (max-width: 576px) {
   .b-services {
-    grid-template: repeat(6, 440px)/repeat(1, minmax(auto, 460px));
+    -ms-grid-rows: (440px)[6];
+    -ms-grid-columns: (minmax(auto, 460px))[1];
+        grid-template: repeat(6, 440px)/repeat(1, minmax(auto, 460px));
   }
 }
 .b-services__item {
@@ -435,16 +519,28 @@ p {
 }
 
 .b-service-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: white;
 }
 .b-service-item:hover {
-  animation-name: appearence;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: appearence;
+          animation-name: appearence;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   background: #00897b;
   color: white;
 }
@@ -469,8 +565,10 @@ p {
   position: relative;
 }
 .b-service-btn-container:hover::after {
-  animation-name: appearence;
-  animation-duration: 0.2s;
+  -webkit-animation-name: appearence;
+          animation-name: appearence;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
   content: "";
   width: 26px;
   height: 31px;
@@ -523,14 +621,23 @@ p {
 }
 
 .b-lworks-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
   max-width: 760px;
 }
 @media (max-width: 576px) {
   .b-lworks-btns {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .b-lworks-btns__btn {
@@ -550,25 +657,35 @@ p {
   border: 2px solid #00897b;
 }
 .b-lworks-btn:hover {
-  animation-name: appearence, bor;
+  -webkit-animation-name: appearence, bor;
+          animation-name: appearence, bor;
   background: #00897b;
   color: white;
 }
 
 .b-lworks-images {
+  display: -ms-grid;
   display: grid;
-  grid-template: repeat(2, auto)/repeat(3, 33%);
+  -ms-grid-rows: auto min(30px,2.1428571429vw) auto;
+  -ms-grid-columns: 33% min(30px,2.1428571429vw) 33% min(30px,2.1428571429vw) 33%;
+      grid-template: repeat(2, auto)/repeat(3, 33%);
   gap: min(30px,2.1428571429vw);
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media (max-width: 768px) {
   .b-lworks-images {
-    grid-template: repeat(3, auto)/repeat(2, 50%);
+    -ms-grid-rows: (auto)[3];
+    -ms-grid-columns: (50%)[2];
+        grid-template: repeat(3, auto)/repeat(2, 50%);
   }
 }
 @media (max-width: 576px) {
   .b-lworks-images {
-    grid-template: repeat(6, auto)/repeat(1, 100%);
+    -ms-grid-rows: (auto)[6];
+    -ms-grid-columns: (100%)[1];
+        grid-template: repeat(6, auto)/repeat(1, 100%);
   }
 }
 
@@ -603,9 +720,12 @@ p {
 }
 
 .b-lworks-images-img-l:hover {
-  animation-name: appearence-h;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: appearence-h;
+          animation-name: appearence-h;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   color: white;
 }
 
@@ -663,13 +783,22 @@ p {
 }
 
 .b-contacts-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (max-width: 768px) {
   .b-contacts-icons {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .b-contacts-icon {
@@ -680,9 +809,15 @@ p {
 }
 
 .b-contacts-icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 50%;
   height: 110px;
   width: 110px;
@@ -690,31 +825,49 @@ p {
 }
 .b-contacts-icon-container:hover {
   color: #00897b;
-  animation-name: trans-to;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: trans-to;
+          animation-name: trans-to;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .b-contacts-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .b-contacts-form__inp {
   padding: clamp(16.4571428571px,2.1428571429vw,30px) clamp(10.9714285714px,1.4285714286vw,20px);
   margin-top: 30px;
 }
 .b-contacts-form__inp_sub {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .b-contacts-form-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (max-width: 768px) {
   .b-contacts-form-head {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .b-contacts-form-head__inp {
@@ -733,7 +886,8 @@ p {
 .b-contacts-inp {
   color: gray;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 10px;
 }
 .b-contacts-inp_sub {
@@ -741,7 +895,8 @@ p {
   width: clamp(120.6857142857px,15.7142857143vw,220px);
 }
 .b-contacts-inp_sub:hover {
-  animation-name: none;
+  -webkit-animation-name: none;
+          animation-name: none;
 }
 
 .b-footer {
