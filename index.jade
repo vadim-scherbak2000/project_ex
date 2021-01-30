@@ -31,4 +31,18 @@ html(lang='zxx')
               development projects 
             button(type='button').b-head-btn.b-head-content__btn.b-head-btn_white our services
             button(type='button').b-head-btn.b-head-content__btn.b-head-btn_green.b-head-content__btn_green hire is now
+      article.b-abus.b-page__abus-line
+        h5.b-abus-title about us 
+        p.b-abus-post-title.b-abus__post-title. 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        .b-abus-cols.b-abus__cols
+        
+          -let b_abus_col = ['awesome icons','one page','fully responsive'];
+          -for (let i in b_abus_col) {
+            section.b-abus-col.b-abus-cols__col
+              img(src=`img/about/about-us-img${++i}.png`,alt='img').b-abus-col__img
+              h2.b-abus-col-title.b-abus-col__title= b_abus_col[--i]
+              p.b-abus-col-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+          -}      
     footer
