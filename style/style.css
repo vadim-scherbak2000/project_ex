@@ -149,7 +149,7 @@ p {
   text-decoration: none;
 }
 
-.b-head-btn_green {
+.b-lworks-vbtn, .b-head-btn_green {
   font-family: "Roboto Bold";
   font-size: clamp(10.9714285714px,1.4285714286vw,20px);
   text-transform: uppercase;
@@ -157,13 +157,13 @@ p {
   white-space: inherit;
   text-decoration: none;
 }
-.b-head-btn_green:hover {
+.b-lworks-vbtn:hover, .b-head-btn_green:hover {
   animation-name: bor;
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
 
-.b-service-item-btn, .b-head-btn_white {
+.b-lworks-btn, .b-service-item-btn, .b-head-btn_white {
   font-family: "OpenSans SemiBold";
   font-size: clamp(10.9714285714px,1.4285714286vw,20px);
   text-transform: uppercase;
@@ -171,7 +171,7 @@ p {
   white-space: inherit;
   text-decoration: none;
 }
-.b-service-item-btn:hover, .b-head-btn_white:hover {
+.b-lworks-btn:hover, .b-service-item-btn:hover, .b-head-btn_white:hover {
   animation-name: trans-to, bor;
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
@@ -486,4 +486,130 @@ p {
 }
 .b-service-item-btn:hover {
   border-color: transparent;
+}
+
+.b-lworks {
+  text-align: center;
+}
+.b-lworks__btns {
+  margin: auto;
+}
+.b-lworks__post-title {
+  margin: 25px 0 110px 0;
+}
+.b-lworks__images {
+  margin-top: 110px;
+}
+.b-lworks__vbtn {
+  margin-top: 130px;
+  padding: 2em 5em;
+}
+
+.b-page__lworks-line {
+  padding: 130px min(115px,8.2142857143vw);
+}
+
+.b-lworks-title {
+  text-transform: capitalize;
+}
+
+.b-lworks-post-title {
+  white-space: pre;
+}
+@media (max-width: 1200px) {
+  .b-lworks-post-title {
+    white-space: normal;
+  }
+}
+
+.b-lworks-btns {
+  display: flex;
+  justify-content: center;
+  align-items: initial;
+  max-width: 760px;
+}
+@media (max-width: 576px) {
+  .b-lworks-btns {
+    flex-direction: column;
+  }
+}
+.b-lworks-btns__btn {
+  padding: 2em;
+  margin-right: 20px;
+}
+@media (max-width: 576px) {
+  .b-lworks-btns__btn {
+    margin: 0 0 min(30px,2.1428571429vw) 0;
+  }
+}
+.b-lworks-btns__btn:last-of-type {
+  margin: 0;
+}
+
+.b-lworks-btn {
+  border: 2px solid #00897b;
+}
+.b-lworks-btn:hover {
+  animation-name: appearence, bor;
+  background: #00897b;
+  color: white;
+}
+
+.b-lworks-images {
+  display: grid;
+  grid-template: repeat(2, auto)/repeat(3, 33%);
+  gap: min(30px,2.1428571429vw);
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .b-lworks-images {
+    grid-template: repeat(3, auto)/repeat(2, 50%);
+  }
+}
+@media (max-width: 576px) {
+  .b-lworks-images {
+    grid-template: repeat(6, auto)/repeat(1, 100%);
+  }
+}
+
+.b-lworks-images-container {
+  position: relative;
+}
+
+.b-lworks-images-img {
+  height: auto;
+  width: 100%;
+}
+
+.b-lworks-images-img-l {
+  text-align: center;
+  background: black;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  text-transform: capitalize;
+}
+.b-lworks-images-img-l::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.b-lworks-images-title {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.b-lworks-images-img-l:hover {
+  animation-name: appearence-h;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  color: white;
+}
+
+.b-lworks-vbtn {
+  color: white;
+  background: #00897b;
 }

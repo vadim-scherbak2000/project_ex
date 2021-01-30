@@ -63,6 +63,29 @@ html(lang='zxx')
                 atque corrupti quos.
               .b-service-btn-container 
                 button(type='button').b-service-item-btn.b-service-item__btn read more 
-          -}      
+          -}
+      article.b-lworks.b-page__lworks-line
+        h5.b-lworks-title latest works  
+        p.b-lworks-post-title.b-lworks__post-title.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        nav.b-lworks-btns.b-lworks__btns
+        
+          -let b_lworks_btn = ['all','web design','ui/ux design','mockups'] 
+          -for (let i of b_lworks_btn) {
+            button(type='button').b-lworks-btn.b-lworks-btns__btn= i
+          -}
+          
+        .b-lworks-images.b-lworks__images
+        
+          -for (let i = 1; i<7; i++) {
+            section.b-lworks-images-container
+              img(src=`img/works/works-img${i}.png`,alt='img').b-lworks-images-img
+              .b-lworks-images-img-l
+                h2.b-lworks-images-title latest works
+          -}
+        
+        button(type='button').b-lworks-vbtn.b-lworks__vbtn view all      
+          
         
     footer
