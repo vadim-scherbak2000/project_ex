@@ -85,7 +85,26 @@ html(lang='zxx')
                 h2.b-lworks-images-title latest works
           -}
         
-        button(type='button').b-lworks-vbtn.b-lworks__vbtn view all      
+        button(type='button').b-lworks-vbtn.b-lworks__vbtn view all 
+      article.b-contacts.b-page__contacts-line 
+        h5.b-contacts-title contact us
+        p.b-contacts-post-title.b-contacts__post-title.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        .b-contacts-icons
+          -let b_contacts_icon = ['Nobinagar savar, Dhaka Bangladesh','+8801743331996 +8801928737807','quickmasud@gmail.com quickmasud@yahoo.com'];
+          -for (let i in b_contacts_icon) {
+            section.b-contacts-icon.b-contacts__icon
+              .b-contacts-icon-container.b-contacts-icon__container
+                img(src=`img/contacts/contacts-icon${++i}.png`,alt='img').b-contacts-icon-img.b-contacts-icon__img 
+              h2.b-contacts-icon-txt= b_contacts_icon[--i]
+          -}
+        form.b-contacts-form.b-contacts__form
+          .b-contacts-form-head
+            input(type='text',placeholder='Your NAME').b-contacts-inp.b-contacts-form-head__inp
+            input(type='email',placeholder='Your EMAIL').b-contacts-inp.b-contacts-form-head__inp
+          textarea(placeholder='Write Message',rows ='10').b-contacts-inp.b-contacts-form__inp
+          input(type='submit',value='send').b-contacts-inp.b-contacts-form__inp.b-contacts-inp_sub.b-contacts-form__inp_sub     
           
         
     footer
